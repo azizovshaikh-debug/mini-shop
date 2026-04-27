@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+body {
+  background: #f3f4f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav a, nav button {
+  transition: all 0.2s ease;
+}
+nav a:hover, nav button:hover {
+  opacity: 0.8;
+}
+input, button, select, textarea {
+  transition: all 0.2s ease;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+/* Эффект нажатия для ВСЕХ кнопок */
+button:active {
+  transform: scale(0.95);
+}
+
+/* Анимация добавления в корзину */
+.btn-cart {
+  transition: all 0.3s ease;
+}
+.btn-cart:active {
+  transform: scale(0.9);
+  background: #10b981 !important;
+}
+.btn-cart.added {
+  background: #10b981 !important;
+  pointer-events: none;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Пульсация иконки корзины */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+.cart-pulse {
+  animation: pulse 0.4s ease;
+}
